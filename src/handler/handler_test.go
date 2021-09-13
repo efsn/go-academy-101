@@ -1,7 +1,8 @@
-package handler
+package handler_test
 
 import (
 	"encoding/json"
+	"go-workshop-101/src/handler"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -13,7 +14,7 @@ const (
 )
 
 func init() {
-	Route()
+	handler.Route()
 }
 
 func TestSendJson(t *testing.T) {

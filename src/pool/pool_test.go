@@ -1,4 +1,4 @@
-package main
+package pool_test
 
 import (
 	"go-workshop-101/src/pool"
@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"sync"
 	"sync/atomic"
+	"testing"
 	"time"
 )
 
@@ -32,7 +33,7 @@ func createConnection() (io.Closer, error) {
 	return &dbConnection{id}, nil
 }
 
-func main() {
+func TestPool(t *testing.T) {
 	var wg sync.WaitGroup
 	wg.Add(maxGoroutines)
 	p, err := pool.New(createConnection, pooledResources)

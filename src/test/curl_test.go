@@ -1,13 +1,14 @@
-package main
+package test
 
 import (
 	"io"
 	"log"
 	"net/http"
 	"os"
+	"testing"
 )
 
-func main() {
+func TestCURL(t *testing.T) {
 	r, err := http.Get(os.Args[1])
 	if err != nil {
 		log.Fatalln(err)

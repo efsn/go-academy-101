@@ -1,10 +1,11 @@
-package main
+package log_test
 
 import (
 	"io"
 	"io/ioutil"
 	"log"
 	"os"
+	"testing"
 )
 
 var (
@@ -27,7 +28,7 @@ func init() {
 	Error = log.New(io.MultiWriter(file, os.Stderr), "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
 }
 
-func main() {
+func TestLog(t *testing.T) {
 	Trace.Println("i have something standard to say")
 	Info.Println("special information")
 	Warning.Println("there is something you need to know about")

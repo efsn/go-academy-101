@@ -1,9 +1,10 @@
-package main
+package work_test
 
 import (
 	"go-workshop-101/src/work"
 	"log"
 	"sync"
+	"testing"
 	"time"
 )
 
@@ -24,7 +25,7 @@ func (n *namePrinter) Task() {
 	time.Sleep(time.Second)
 }
 
-func main() {
+func TestWork(t *testing.T) {
 	p := work.New(2)
 	var wg sync.WaitGroup
 	wg.Add(100 * len(names))

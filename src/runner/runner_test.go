@@ -1,15 +1,16 @@
-package main
+package runner_test
 
 import (
 	"go-workshop-101/src/runner"
 	"log"
 	"os"
+	"testing"
 	"time"
 )
 
 const timeout = 3 * time.Second
 
-func main() {
+func TestRunner_Add(t *testing.T) {
 	log.Println("start work")
 	r := runner.New(timeout)
 	r.Add(createTask(), createTask(), createTask())
