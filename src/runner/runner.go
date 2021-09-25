@@ -2,11 +2,13 @@ package runner
 
 import (
 	"errors"
+	"fmt"
 	"os"
 	"os/signal"
 	"time"
 )
 
+// Runner TODO
 type Runner struct {
 	interrupt chan os.Signal
 	complete  chan error
@@ -15,10 +17,14 @@ type Runner struct {
 }
 
 var (
-	ErrTimeout   = errors.New("received timeout")
+	// ErrTimeout timeoute err
+	ErrTimeout = errors.New("received timeout")
+
+	// ErrInterrupt interrupt err
 	ErrInterrupt = errors.New("received interrupt")
 )
 
+// New builder
 func New(d time.Duration) *Runner {
 	return &Runner{
 		interrupt: make(chan os.Signal, 1),
@@ -27,10 +33,17 @@ func New(d time.Duration) *Runner {
 	}
 }
 
+// Task test implements across pkg
+func (r *Runner) Task() {
+	fmt.Println("implements Worker Task func.")
+}
+
+// Add tasks
 func (r *Runner) Add(tasks ...func(int)) {
 	r.tasks = append(r.tasks, tasks...)
 }
 
+// Start run tasks
 func (r *Runner) Start() error {
 	signal.Notify(r.interrupt, os.Interrupt)
 	go func() {

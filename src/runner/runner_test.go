@@ -2,6 +2,7 @@ package runner_test
 
 import (
 	"go-workshop-101/src/runner"
+	"go-workshop-101/src/work"
 	"log"
 	"os"
 	"testing"
@@ -24,7 +25,14 @@ func TestRunner_Add(t *testing.T) {
 			os.Exit(2)
 		}
 	}
+	runWork()
 	log.Println("process ended")
+}
+
+func runWork() {
+	var w work.Worker
+	w = runner.New(1)
+	w.Task()
 }
 
 func createTask() func(int) {
