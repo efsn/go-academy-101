@@ -1,8 +1,8 @@
 package main
 
 import (
-	"go-workshop-101/src/chain"
-	"go-workshop-101/src/rpc"
+	"github.com/efsn/go-workshop-101/internal/chain"
+	"github.com/efsn/go-workshop-101/internal/rpc"
 )
 
 func main() {

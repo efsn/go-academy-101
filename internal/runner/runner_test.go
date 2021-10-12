@@ -1,12 +1,13 @@
 package runner_test
 
 import (
-	"go-workshop-101/src/runner"
-	"go-workshop-101/src/work"
 	"log"
 	"os"
 	"testing"
 	"time"
+
+	"github.com/efsn/go-workshop-101/internal/runner"
+	"github.com/efsn/go-workshop-101/internal/work"
 )
 
 const timeout = 3 * time.Second

@@ -2,9 +2,10 @@ package rpc
 
 import (
 	"encoding/json"
-	"go-workshop-101/src/chain"
 	"io"
 	"net/http"
+
+	"github.com/efsn/go-workshop-101/internal/chain"
 )
 
 var blockChain *chain.BlockChain

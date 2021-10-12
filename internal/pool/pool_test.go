@@ -1,7 +1,6 @@
 package pool_test
 
 import (
-	"go-workshop-101/src/pool"
 	"io"
 	"log"
 	"math/rand"
@@ -9,6 +8,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	"github.com/efsn/go-workshop-101/internal/pool"
 )
 
 const (

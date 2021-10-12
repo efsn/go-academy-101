@@ -1,11 +1,12 @@
 package work_test
 
 import (
-	"go-workshop-101/src/work"
 	"log"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/efsn/go-workshop-101/internal/work"
 )
 
 var names = []string{

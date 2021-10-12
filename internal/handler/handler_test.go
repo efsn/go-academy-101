@@ -2,10 +2,11 @@ package handler_test
 
 import (
 	"encoding/json"
-	"go-workshop-101/src/handler"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/efsn/go-workshop-101/internal/handler"
 )
 
 const (
